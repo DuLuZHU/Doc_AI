@@ -32,7 +32,7 @@ llm_api/
 llm_config = {
     "api_key": "your_actual_api_key_here",  # 替换为你的API密钥
     "model_name": "deepseek-chat",  # 模型名称
-    "base_url": "http://192.167.253.100:33330/v1/chat/completions",  # API基础URL
+    "base_url": "http://www.deepseek.cn/v1/chat/completions",  # API基础URL
     # ... 其他配置
 }
 ```
@@ -75,79 +75,21 @@ uvicorn api:app --host 0.0.0.0 --port 8000
 http://localhost:8000/docs
 ```
 
-## API接口
+### 6. API接口测试命令
 
-### 医疗术语自动补全
+#### Linux/Mac (curl)
+```bash
+curl -X POST "http://localhost:8000/api/autocomplete" -H "Content-Type: application/json" -d '{"query":"高血", "context":"患者有", "limit":3}'
+```
 
-- **接口地址**：`POST /api/autocomplete`
-- **请求参数**：
-  - `query`：医生输入的查询词（如"高血"）
-  - `context`：当前输入上下文（可选，如"患者有"）
-  - `limit`：返回结果数量限制（默认5）
+#### Windows PowerShell
+```powershell
+Invoke-WebRequest -Uri "http://localhost:8000/api/autocomplete" -Method POST -ContentType "application/json" -Body '{"query":"高血", "context":"患者有", "limit":3}' -UseBasicParsing
+```
 
-- **请求示例**：
-  ```json
-  {
-    "query": "高血",
-    "context": "患者有",
-    "limit": 3
-  }
-  ```
-
-- **响应示例**：
-  ```json
-  {
-    "code": 200,
-    "message": "success",
-    "data": {
-      "suggestions": [
-        {
-          "term": "高血压",
-          "score": 1.0,
-          "confidence": 1.0
-        },
-        {
-          "term": "高血脂",
-          "score": 2.0,
-          "confidence": 0.75
-        },
-        {
-          "term": "高血糖",
-          "score": 3.0,
-          "confidence": 0.5
-        }
-      ]
-    }
-  }
-  ```
-
-- **测试命令**：
-  
-  #### Linux/Mac (curl)
-  ```bash
-  curl -X POST "http://localhost:8000/api/autocomplete" -H "Content-Type: application/json" -d '{"query":"高血", "context":"患者有", "limit":3}'
-  ```
-  
-  #### Windows PowerShell
-  ```powershell
-  Invoke-WebRequest -Uri "http://localhost:8000/api/autocomplete" -Method POST -ContentType "application/json" -Body '{"query":"高血", "context":"患者有", "limit":3}' -UseBasicParsing
-  ```
-  
   #### Windows PowerShell Core
   ```powershell
   curl.exe -X POST "http://localhost:8000/api/autocomplete" -H "Content-Type: application/json" -d '{"query":"高血", "context":"患者有", "limit":3}'
-  ```
-
-### 健康检查
-
-- **接口地址**：`GET /health`
-- **响应示例**：
-  ```json
-  {
-    "code": 200,
-    "message": "LLM API service is running",
-    "timestamp": "2024-01-01T00:00:00Z"
-  }
   ```
 
 ## 配置说明
