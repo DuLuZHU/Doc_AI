@@ -237,8 +237,8 @@ def main():
         predictor = MedicalModelPredictor(config)
         
         # 3. 示例预测
-        example_queries = ["高血", "糖尿", "心脏"]
-        example_contexts = ["患者有", "患者诊断为", "患者出现"]
+        example_queries = ["高血", "胃", "口服"]
+        example_contexts = ["患者有", "被诊断为", "医生建议"]
         
         print("\n示例预测结果：")
         for query, context in zip(example_queries, example_contexts):

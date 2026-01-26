@@ -25,9 +25,9 @@ def main():
     print("\n--- 示例预测 ---\n")
     
     # 示例1：基本预测
-    print("示例1：基本预测")
-    result1 = predictor.predict("乳酸")
-    print(f"查询：'乳酸'，结果：{[r['term'] for r in result1]}")
+    # print("示例1：基本预测")
+    # result1 = predictor.predict("乳酸")
+    # print(f"查询：'乳酸'，结果：{[r['term'] for r in result1]}")
     
     # 示例2：带上下文的预测
     print("\n示例2：带上下文的预测")
@@ -41,17 +41,17 @@ def main():
     
     # 示例4：批量预测
     print("\n示例4：批量预测")
-    queries = ["心脏", "肝", "肺"]
-    contexts = ["患者出现", "患者有", "患者感到"]
+    queries = ["头", "肺", "心", "胃"]
+    contexts = ["患者出现", "患者有", "医生诊断为", "患者感到"]
     results4 = predictor.batch_predict(queries, contexts)
     for query, context, result in zip(queries, contexts, results4):
         print(f"查询：'{query}'，上下文：'{context}'，结果：{[r['term'] for r in result]}")
     
-    # 示例5：详细结果展示
-    print("\n示例5：详细结果展示")
-    result5 = predictor.predict("脑", "患者突发")
-    for i, item in enumerate(result5, 1):
-        print(f"  {i}. {item['term']} (置信度: {item['confidence']:.3f}, 分数: {item['score']:.2f})")
+    # # 示例5：详细结果展示
+    # print("\n示例5：详细结果展示")
+    # result5 = predictor.predict("脑", "患者突发")
+    # for i, item in enumerate(result5, 1):
+    #     print(f"  {i}. {item['term']} (置信度: {item['confidence']:.3f}, 分数: {item['score']:.2f})")
     
     print("\n=== 示例演示完成 ===")
 
