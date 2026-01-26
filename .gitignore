@@ -1,0 +1,7 @@
+medical_bert_model/
+model/
+tmp_trainer/
+
+data/medical_train_data.csv
+
+**/__pycache__/

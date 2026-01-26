@@ -1,0 +1,8 @@
+transformers
+datasets
+pandas
+torch
+numpy
+fastapi
+pydantic
+uvicorn
