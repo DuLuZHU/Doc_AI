@@ -1,0 +1,36 @@
+{
+  "medical_entity_types": {
+    "DISEASE": "疾病",
+    "SYMPTOM": "症状",
+    "MEDICATION": "药物",
+    "TREATMENT": "治疗方法",
+    "BODY_PART": "身体部位",
+    "TEST": "检查项目",
+    "LAB_VALUE": "实验室值"
+  },
+  "case_template": {
+    "基本信息": {
+      "姓名": "未知",
+      "性别": "未知",
+      "年龄": "未知",
+      "职业": "未知",
+      "入院时间": "未知"
+    },
+    "主诉": "",
+    "现病史": "",
+    "既往史": "",
+    "体格检查": "",
+    "辅助检查": "",
+    "诊断": "",
+    "治疗方案": ""
+  },
+  "keyword_lists": {
+    "DISEASE": ["diabetes", "hypertension", "cancer", "asthma", "heart disease", "stroke", "pneumonia", "arthritis", "depression", "anxiety"],
+    "SYMPTOM": ["pain", "fever", "cough", "headache", "fatigue", "nausea", "vomiting", "dizziness", "shortness of breath", "chest pain"],
+    "MEDICATION": ["aspirin", "ibuprofen", "acetaminophen", "antibiotic", "insulin", "antidepressant", "antihistamine", "steroid", "vaccine"],
+    "TREATMENT": ["surgery", "therapy", "medication", "exercise", "diet", "rest", "rehabilitation", "counseling"],
+    "BODY_PART": ["heart", "lung", "liver", "kidney", "brain", "stomach", "intestine", "bone", "muscle", "skin"],
+    "TEST": ["blood test", "x-ray", "ct scan", "mri", "ultrasound", "ecg", "biopsy", "urine test"],
+    "LAB_VALUE": ["blood pressure", "blood sugar", "cholesterol", "temperature", "heart rate", "blood oxygen", "white blood cell count"]
+  }
+}

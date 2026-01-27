@@ -1,5 +1,6 @@
-medical_bert_model/
-model/
-tmp_trainer/
+term_autocomple/medical_bert_model/
+term_autocomple/model/
+term_autocomple/tmp_trainer/
 
 **/__pycache__/
+
